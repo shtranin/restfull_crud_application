@@ -17,19 +17,19 @@ public class EmployeeController {
     }
 
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity saveEmployee(@RequestBody EmployeeEntity person,
                                        @RequestParam Long id){
        return employeeService.registration(person,id);
 
     }
 
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity getEmployeeById(@RequestParam Long id){
             return employeeService.getEmployee(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity deleteEmployeeById(@RequestParam Long id){
            return employeeService.deleteEmployee(id);
     }

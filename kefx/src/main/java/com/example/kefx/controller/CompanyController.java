@@ -14,17 +14,17 @@ public class CompanyController {
     public CompanyController(CompanyService service) {
         this.service = service;
     }
-    @GetMapping()
+    @GetMapping("/get")
     public ResponseEntity getById(@RequestParam Long id){
         return service.getById(id);
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity saveDepartment(@RequestBody CompanyEntity companyEntity){
         return service.registration(companyEntity);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity deleteDepartment(@RequestParam Long id){
         return service.deleteById(id);
     }

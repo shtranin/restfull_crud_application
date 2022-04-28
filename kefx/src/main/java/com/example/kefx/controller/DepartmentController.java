@@ -15,18 +15,18 @@ public class DepartmentController {
         this.service = service;
     }
 
-    @GetMapping()
+    @GetMapping("/get")
         public ResponseEntity getById(@RequestParam Long id){
            return service.getById(id);
         }
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity saveDepartment(@RequestBody DepartmentEntity departmentEntity,
                                          @RequestParam Long id){
              return service.registration(departmentEntity, id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity deleteDepartment(@RequestParam Long id){
               return service.deleteById(id);
     }
